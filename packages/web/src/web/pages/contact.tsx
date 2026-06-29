@@ -192,31 +192,35 @@ export default function ContactPage() {
 
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                      <label htmlFor="contact-name" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                         Your Name
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
+                        aria-label="Your name"
                         className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm"
                         placeholder="Full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                      <label htmlFor="contact-email" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                         Email
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
+                        aria-label="Email address"
                         className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm"
                         placeholder="you@email.com"
                       />
@@ -225,29 +229,33 @@ export default function ContactPage() {
 
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                      <label htmlFor="contact-phone" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                         Contact Number
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         value={formData.contact}
                         onChange={(e) =>
                           setFormData({ ...formData, contact: e.target.value })
                         }
+                        aria-label="Contact number"
                         className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm"
                         placeholder="+1 234 567 8900"
                       />
                     </div>
                     <div>
-                      <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                      <label htmlFor="contact-dates" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                         Preferred Travel Dates
                       </label>
                       <input
+                        id="contact-dates"
                         type="text"
                         value={formData.dates}
                         onChange={(e) =>
                           setFormData({ ...formData, dates: e.target.value })
                         }
+                        aria-label="Preferred travel dates"
                         className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm"
                         placeholder="e.g. July 2026, flexible"
                       />
@@ -255,31 +263,35 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                    <label htmlFor="contact-group" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                       Group Size
                     </label>
                     <input
+                      id="contact-group"
                       type="text"
                       value={formData.groupSize}
                       onChange={(e) =>
                         setFormData({ ...formData, groupSize: e.target.value })
                       }
+                      aria-label="Group size"
                       className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm"
                       placeholder="e.g. 2 adults, 1 child"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
+                    <label htmlFor="contact-message" className="block text-cream/40 text-xs tracking-[0.15em] uppercase mb-2">
                       Tell Me About Your Dream Safari
                     </label>
                     <textarea
+                      id="contact-message"
                       rows={5}
                       value={formData.message}
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
                       className="w-full bg-surface border border-white/10 px-4 py-3 text-cream placeholder-cream/20 focus:border-gold focus:outline-none transition-colors text-sm resize-none"
+                      aria-label="Tell me about your dream safari"
                       placeholder="What excites you about Africa? Any specific parks, experiences, or interests? Whatever comes to mind..."
                     />
                   </div>

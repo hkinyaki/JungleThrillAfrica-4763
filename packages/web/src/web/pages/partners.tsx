@@ -330,6 +330,7 @@ export default function PartnersPage() {
                     setFormData({ ...formData, agency: e.target.value })
                   }
                   className="bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm"
+                  aria-label="Agency or company name"
                   placeholder="Agency / company name"
                 />
                 <input
@@ -340,6 +341,7 @@ export default function PartnersPage() {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   className="bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm"
+                  aria-label="Your name"
                   placeholder="Your name"
                 />
               </div>
@@ -352,6 +354,7 @@ export default function PartnersPage() {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   className="bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm"
+                  aria-label="Email address"
                   placeholder="Email"
                 />
                 <input
@@ -361,6 +364,7 @@ export default function PartnersPage() {
                     setFormData({ ...formData, contact: e.target.value })
                   }
                   className="bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm"
+                  aria-label="WhatsApp or phone (optional)"
                   placeholder="WhatsApp / phone (optional)"
                 />
               </div>
@@ -371,6 +375,7 @@ export default function PartnersPage() {
                   setFormData({ ...formData, country: e.target.value })
                 }
                 className="w-full bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm"
+                aria-label="Where you are based or which market (optional)"
                 placeholder="Where are you based / which market? (optional)"
               />
               <textarea
@@ -380,6 +385,7 @@ export default function PartnersPage() {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 className="w-full bg-dark border border-white/10 px-5 py-4 text-cream placeholder-cream/25 focus:border-gold focus:outline-none transition-colors text-sm resize-none"
+                aria-label="Tell me how you work and what you're looking for"
                 placeholder="Tell me how you work and what you're looking for in a Tanzania partner (optional)"
               />
               <button

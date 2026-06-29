@@ -251,6 +251,7 @@ export default function ExpeditionsPage() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 className="flex-1 bg-[#1c1812] border border-amber-900/40 px-5 py-4 text-cream placeholder-cream/25 focus:border-amber-500 focus:outline-none transition-colors text-sm"
+                aria-label="Your name"
                 placeholder="Your name"
               />
               <input
@@ -261,6 +262,7 @@ export default function ExpeditionsPage() {
                   setFormData({ ...formData, email: e.target.value })
                 }
                 className="flex-1 bg-[#1c1812] border border-amber-900/40 px-5 py-4 text-cream placeholder-cream/25 focus:border-amber-500 focus:outline-none transition-colors text-sm"
+                aria-label="Email address"
                 placeholder="you@email.com"
               />
               <button

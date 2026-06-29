@@ -91,7 +91,6 @@ export function computeRange(inputs: JourneyCostInputs): {
     0,
   );
   const totalNights = parkNights + inputs.coastNights;
-  const parkDays = parkNights; // one fee-day per in-park night
 
   const parkFees = Object.entries(inputs.parkNightsByPark).reduce(
     (sum, [park, nights]) => sum + (PARK_FEE[park] ?? 0) * nights,
