@@ -7,17 +7,47 @@ import Seo from "../../components/seo";
 import { canonicalFor } from "../../lib/seo-config";
 import { journeys } from "../../data/journeys";
 
-const journeysJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Tanzania Safari Journeys",
-  itemListElement: journeys.map((j, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    url: canonicalFor(`/journeys/${j.slug}`),
-    name: `${j.title} — ${j.subtitle}`,
-  })),
-};
+const journeyFaqs = [
+  {
+    q: "How much does a luxury Tanzania safari cost?",
+    a: "It depends entirely on the camps, the season, and how long you travel, so I quote everything as a range and build each journey custom. As a rough guide, a tailor-made luxury safari typically runs from the mid-thousands per person upward — tell me your budget and what you want to feel, and I'll show you what it takes to get there.",
+  },
+  {
+    q: "Can you customise these itineraries?",
+    a: "Always. Every journey on this page is a starting point, never a fixed package. I tailor the route, pace, camps and length entirely around you — your dates, your budget, and the feeling you're chasing.",
+  },
+  {
+    q: "What is a 'slow safari'?",
+    a: "It's how I plan every trip: at least three nights in each place rather than hopping camps nightly. Staying put lets you settle into the rhythm of a place, return to the wildlife you found yesterday, and actually arrive instead of just passing through.",
+  },
+  {
+    q: "Should I combine the northern and southern circuits?",
+    a: "Many of my favourite journeys do exactly that — the iconic north for the Serengeti and the migration, and the wild, uncrowded south around Ruaha for solitude. You don't have to choose; I'll help you decide what fits your time and pace.",
+  },
+];
+
+const journeysJsonLd: Record<string, unknown>[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Tanzania Safari Journeys",
+    itemListElement: journeys.map((j, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: canonicalFor(`/journeys/${j.slug}`),
+      name: `${j.title} — ${j.subtitle}`,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: journeyFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
 
 export default function JourneysPage() {
   return (
@@ -58,8 +88,31 @@ export default function JourneysPage() {
         </div>
       </section>
 
+      {/* INTRO PROSE */}
+      <section className="pb-4 bg-dark">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-5">
+          <div className="gold-line mb-2" />
+          <p className="text-cream/80 text-lg md:text-xl leading-relaxed font-light">
+            These are my luxury Tanzania safari itineraries — but I'd never call
+            them packages. Each one began as a feeling: a honeymoon that needed
+            to be quiet, a family who wanted the wild without the rush, a
+            photographer chasing the light. They're starting points, and I
+            tailor every one entirely around you.
+          </p>
+          <p className="text-cream/70 text-lg leading-relaxed font-light">
+            A custom Tanzania safari can take many shapes — the classic northern
+            circuit through the Serengeti, Ngorongoro and Tarangire; the wild,
+            uncrowded south around Ruaha for those who've safaried before; or a
+            bush-and-beach journey that ends on the white sand of Zanzibar.
+            Whichever direction we go, I plan it slowly, with at least three
+            nights in each place, so your trip is something you live rather than
+            tick off.
+          </p>
+        </div>
+      </section>
+
       {/* GRID */}
-      <section className="pb-24 md:pb-32 bg-dark">
+      <section className="pb-24 md:pb-32 bg-dark pt-12">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {journeys.map((journey) => (
@@ -121,6 +174,31 @@ export default function JourneysPage() {
               starting point. Tell me your pace, your budget, and what you're
               dreaming of, and I'll build something that's truly yours.
             </p>
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-20 max-w-3xl mx-auto">
+            <p className="text-gold text-xs tracking-[0.3em] uppercase mb-3">
+              Good to Know
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-10">
+              Planning Your Safari — Common Questions
+            </h2>
+            <div className="space-y-8">
+              {journeyFaqs.map((f, i) => (
+                <div
+                  key={i}
+                  className="border-b border-gold/10 pb-8 last:border-0"
+                >
+                  <h3 className="font-display text-xl text-cream mb-3 leading-snug">
+                    {f.q}
+                  </h3>
+                  <p className="text-cream/70 text-lg leading-relaxed font-light">
+                    {f.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* CTA */}

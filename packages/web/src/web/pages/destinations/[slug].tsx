@@ -48,6 +48,21 @@ export default function DestinationDetailPage() {
     address: { "@type": "PostalAddress", addressCountry: "TZ" },
   };
 
+  const faqJsonLd =
+    dest.faqs && dest.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: dest.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
+
+  const jsonLd = faqJsonLd ? [destJsonLd, faqJsonLd] : destJsonLd;
+
   return (
     <div className="min-h-screen bg-dark">
       <Seo
@@ -56,7 +71,7 @@ export default function DestinationDetailPage() {
         path={`/destinations/${dest.slug}`}
         image={dest.heroImage}
         type="article"
-        jsonLd={destJsonLd}
+        jsonLd={jsonLd}
       />
       <Navbar />
       <WhatsAppButton />
@@ -138,10 +153,64 @@ export default function DestinationDetailPage() {
         </div>
       </section>
 
+      {/* DEEP DIVE */}
+      {dest.deepDive && dest.deepDive.length > 0 && (
+        <section className="py-16 md:py-20 bg-dark border-t border-gold/10">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8 space-y-14">
+            {dest.deepDive.map((section, i) => (
+              <div key={i}>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-cream mb-6 leading-tight">
+                  {section.heading}
+                </h2>
+                <div className="space-y-5">
+                  {section.body.map((para, j) => (
+                    <p
+                      key={j}
+                      className="text-cream/75 text-lg leading-relaxed font-light"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {dest.faqs && dest.faqs.length > 0 && (
+        <section className="py-16 md:py-20 bg-surface">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+            <p className="text-gold text-xs tracking-[0.3em] uppercase mb-3">
+              Good to Know
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-10">
+              {dest.shortName} Safari FAQs
+            </h2>
+            <div className="space-y-8">
+              {dest.faqs.map((f, i) => (
+                <div
+                  key={i}
+                  className="border-b border-gold/10 pb-8 last:border-0"
+                >
+                  <h3 className="font-display text-xl text-cream mb-3 leading-snug">
+                    {f.q}
+                  </h3>
+                  <p className="text-cream/70 text-lg leading-relaxed font-light">
+                    {f.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* HUGO'S TAKE */}
-      <section className="py-16 md:py-20 bg-surface">
+      <section className="py-16 md:py-20 bg-dark">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="bg-dark border border-gold/15 p-8 md:p-12">
+          <div className="bg-surface border border-gold/15 p-8 md:p-12">
             <div className="flex items-center gap-3 mb-5">
               <Heart size={18} className="text-gold" />
               <p className="text-gold text-xs tracking-[0.2em] uppercase">

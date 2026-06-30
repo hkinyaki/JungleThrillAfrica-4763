@@ -15,6 +15,7 @@ export default function honoDevPlugin(): Plugin {
         const seoFiles: Record<string, string> = {
           "/sitemap.xml": "application/xml; charset=utf-8",
           "/robots.txt": "text/plain; charset=utf-8",
+          "/llms.txt": "text/plain; charset=utf-8",
         };
         const contentType = seoFiles[url];
         if (!contentType) return next();

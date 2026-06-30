@@ -61,17 +61,37 @@ export default function AboutPage() {
               I've been working in East African hospitality for over a decade.
             </p>
             <p>
-              I've spent years managing luxury safari camps — training staff,
-              hosting guests, and learning every detail of what makes a safari
-              experience truly special. I know the rhythm of the bush. I know
-              what the Serengeti looks like in January versus July. I know which
-              corners of Ruaha most people never hear about. I know what it
-              feels like to sit around a campfire at night and realize the whole
-              world is quiet except for the sounds of Africa.
+              I've spent years managing luxury safari camps — training the teams
+              who look after guests, hosting travellers from every corner of the
+              world, and learning every detail of what makes a safari truly
+              special. That's not knowledge you get from a brochure. It comes
+              from living it: from being on the ground, season after season,
+              watching how these wild places change and how a trip comes together
+              when someone who actually knows them is paying attention.
             </p>
             <p>
-              That knowledge and love for this place is why I created Jungle
-              Thrill Africa.
+              I know the rhythm of the bush. I know what the Serengeti looks like
+              in January when the southern plains fill with newborns, versus July
+              when the herds push north toward the rivers. I know which quiet
+              corners of Ruaha most travellers never hear about, and why the
+              elephants of Tarangire gather where they do as the dry season
+              deepens. I know the unhurried magic of staying somewhere long
+              enough to feel it — which is why I plan every journey slowly, never
+              rushing you from one place to the next.
+            </p>
+            <p>
+              And because I'm still active in the industry, I'm familiar with the
+              standards across many of the region's finest camps — what refined,
+              eco-conscious, genuinely warm hospitality looks like, and what
+              falls short of it. When I recommend a place to you, it's measured
+              against a bar I've worked to my whole career.
+            </p>
+            <p>
+              That knowledge — and a deep love for this place I call home — is
+              why I created Jungle Thrill Africa. Not to be the biggest safari
+              company, but to be the one real person on the ground who plans your
+              Tanzania safari personally, and stays in your corner from the first
+              message to the last sunset.
             </p>
           </div>
         </div>
